@@ -1,16 +1,16 @@
 import React from "react";
 import Menu from "./menu";
-import { Main } from "next/document";
 
 export interface PageProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
 }
 
-const Pager = ({ children }: PageProps) => {
+const Pager = ({ children, className }: PageProps) => {
   return (
     <div className="flex">
       <Menu />
-      <main className="flex-1 p-7">{children}</main>
+      <main className={`flex-1 p-7 ${className ?? ""}`}>{children}</main>
     </div>
   );
 };
